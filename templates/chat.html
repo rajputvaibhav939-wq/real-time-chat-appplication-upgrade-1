@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Welcome, {{ username }}!</h2>
+        <a href="/logout">Logout</a>
+        <ul id="messages"></ul>
+        <div class="input-area">
+            <input id="msg_input" autocomplete="off" placeholder="Type message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='chat.js') }}"></script>
+    <script>
+        const username = "{{ username }}";
+    </script>
+</body>
+</html>
